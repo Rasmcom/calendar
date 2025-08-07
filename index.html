@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التقويم الدراسي للفصل الدراسي الأول 1447 هـ</title>
+    <title>الجدول المدرسي للفصل الدراسي الأول 1447 هـ</title>
     <!-- خطوط محلية فقط - لا حاجة للإنترنت -->
     <style>
         /* خط Cairo */
@@ -801,6 +801,11 @@
                 justify-content: center;
             }
             
+            .names-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+            
             .contact-info img {
                 max-width: 60px !important;
                 max-height: 60px !important;
@@ -833,7 +838,7 @@
         <div class="header">
             <div class="header-content">
                 <img src="https://salogos.org/wp-content/uploads/2021/11/UntiTtled-1-1300x988.png" alt="شعار وزارة التعليم" class="ministry-logo">
-                <h1>التقويم المدرسي للفصل الدراسي الأول للعام الدراسي 1447 هـ</h1>
+                <h1>التقويم الدراسي للفصل الدراسي الأول لعام 1447 هـ</h1>
             </div>
         </div>
         
@@ -864,14 +869,14 @@
             <div class="week-card" onclick="showWeekDetails(4)">
                 <div class="week-title">الأسبوع الرابع</div>
                 <div class="week-dates">22 / 3 - 26 / 3</div>
-                <div class="week-status" style="background: #e3f2fd; color: #1565c0;">انقر للتفاصيل</div>
+                <div class="week-status" style="background: #e3f2fd; color: #1565c0;">🇸🇦 اليوم الوطني</div>
             </div>
             
-            <!-- الأسبوع الخامس - اليوم الوطني -->
+            <!-- الأسبوع الخامس -->
             <div class="week-card" onclick="showWeekDetails(5)">
                 <div class="week-title">الأسبوع الخامس</div>
                 <div class="week-dates">29 / 3 - 3 / 4</div>
-                <div class="week-status" style="background: #e3f2fd; color: #1565c0;">🇸🇦 اليوم الوطني</div>
+                <div class="week-status" style="background: #e3f2fd; color: #1565c0;">انقر للتفاصيل</div>
             </div>
             
             <!-- الأسبوع السادس -->
@@ -892,7 +897,7 @@
             <div class="week-card" onclick="showWeekDetails(8)">
                 <div class="week-title">الأسبوع الثامن</div>
                 <div class="week-dates">20 / 4 - 24 / 4</div>
-                <div class="week-status" style="background: #e3f2fd; color: #1565c0;">🏖️ إجازة إضافية</div>
+                <div class="week-status" style="background: #ffebee; color: #c62828; border: 1px solid #ffcdd2;">🏖️ إجازة إضافية</div>
             </div>
             
             <!-- الأسبوع التاسع -->
@@ -902,36 +907,36 @@
                 <div class="week-status" style="background: #e3f2fd; color: #1565c0;">انقر للتفاصيل</div>
             </div>
             
-            <!-- إجازة الخريف -->
-            <div class="week-card autumn-break-card" onclick="showWeekDetails('autumn')">
-                <div class="week-title">🍂 إجازة الخريف 🍂</div>
-                <div class="week-dates">4 / 5 - 8 / 5</div>
-                <div class="week-status" style="background: #fff3cd; color: #856404;">إجازة رسمية</div>
-            </div>
-            
-            <!-- باقي الأسابيع -->
+            <!-- الأسبوع العاشر -->
             <div class="week-card" onclick="showWeekDetails(10)">
                 <div class="week-title">الأسبوع العاشر</div>
-                <div class="week-dates">11 / 5 - 15 / 5</div>
+                <div class="week-dates">4 / 5 - 8 / 5</div>
                 <div class="week-status" style="background: #e3f2fd; color: #1565c0;">انقر للتفاصيل</div>
             </div>
             
             <div class="week-card" onclick="showWeekDetails(11)">
                 <div class="week-title">الأسبوع الحادي عشر</div>
-                <div class="week-dates">18 / 5 - 22 / 5</div>
+                <div class="week-dates">11 / 5 - 15 / 5</div>
                 <div class="week-status" style="background: #e3f2fd; color: #1565c0;">انقر للتفاصيل</div>
             </div>
             
             <div class="week-card" onclick="showWeekDetails(12)">
                 <div class="week-title">الأسبوع الثاني عشر</div>
-                <div class="week-dates">25 / 5 - 29 / 5</div>
+                <div class="week-dates">18 / 5 - 22 / 5</div>
                 <div class="week-status" style="background: #e3f2fd; color: #1565c0;">انقر للتفاصيل</div>
             </div>
             
             <div class="week-card" onclick="showWeekDetails(13)">
                 <div class="week-title">الأسبوع الثالث عشر</div>
-                <div class="week-dates">2 / 6 - 6 / 6</div>
+                <div class="week-dates">25 / 5 - 29 / 5</div>
                 <div class="week-status" style="background: #e3f2fd; color: #1565c0;">انقر للتفاصيل</div>
+            </div>
+            
+            <!-- إجازة الخريف -->
+            <div class="week-card autumn-break-card" onclick="showWeekDetails('autumn')">
+                <div class="week-title">🍂 إجازة الخريف 🍂</div>
+                <div class="week-dates">30 / 5 - 8 / 6</div>
+                <div class="week-status" style="background: #fff3cd; color: #856404;">إجازة رسمية</div>
             </div>
             
             <div class="week-card" onclick="showWeekDetails(14)">
@@ -943,45 +948,47 @@
             <div class="week-card" onclick="showWeekDetails(15)">
                 <div class="week-title">الأسبوع الخامس عشر</div>
                 <div class="week-dates">16 / 6 - 20 / 6</div>
-                <div class="week-status" style="background: #e3f2fd; color: #1565c0;">🏖️ إجازة إضافية</div>
+                <div class="week-status" style="background: #ffebee; color: #c62828; border: 1px solid #ffcdd2;">🏖️ إجازة إضافية</div>
             </div>
             
             <div class="week-card" onclick="showWeekDetails(16)">
                 <div class="week-title">الأسبوع السادس عشر</div>
                 <div class="week-dates">23 / 6 - 27 / 6</div>
-                <div class="week-status" style="background: #e3f2fd; color: #1565c0;">🏖️ إجازة إضافية</div>
+                <div class="week-status" style="background: #ffebee; color: #c62828; border: 1px solid #ffcdd2;">🏖️ إجازة إضافية</div>
             </div>
             
             <div class="week-card" onclick="showWeekDetails(17)">
                 <div class="week-title">الأسبوع السابع عشر</div>
-                <div class="week-dates">30 / 6 - 4 / 7</div>
+                <div class="week-dates">1 / 7 - 5 / 7</div>
                 <div class="week-status" style="background: #e3f2fd; color: #1565c0;">انقر للتفاصيل</div>
             </div>
             
             <div class="week-card" onclick="showWeekDetails(18)">
                 <div class="week-title">الأسبوع الثامن عشر</div>
-                <div class="week-dates">7 / 7 - 11 / 7</div>
+                <div class="week-dates">8 / 7 - 12 / 7</div>
                 <div class="week-status" style="background: #e3f2fd; color: #1565c0;">انقر للتفاصيل</div>
             </div>
+            
+
             
             <!-- بداية الاختبارات النهائية -->
             <div class="week-card" style="background: #e9ecef; border: 3px solid #6c757d;">
                 <div class="week-title" style="color: #495057;">📝 الاختبارات النهائية</div>
-                <div class="week-dates">15 / 7 - 19 / 7</div>
+                <div class="week-dates"><strong>15 / 7 - 19 / 7</strong></div>
                 <div class="week-status" style="background: #6c757d; color: white;">اختبارات تحريرية</div>
             </div>
             
             <!-- بداية إجازة منتصف العام -->
             <div class="week-card" style="background: #d4edda; border: 3px solid #28a745;">
                 <div class="week-title" style="color: #155724;">🏖️ إجازة منتصف العام</div>
-                <div class="week-dates">20 / 7 / 1447 هـ</div>
-                <div class="week-status" style="background: #28a745; color: white;">يوم الأحد</div>
+                <div class="week-dates"><strong>20 / 7 / 1447 هـ</strong></div>
+                <div class="week-status" style="background: #28a745; color: white;">إجازة رسمية</div>
             </div>
             
             <!-- بداية الفصل الثاني -->
             <div class="week-card" style="background: #d1ecf1; border: 3px solid #17a2b8;">
                 <div class="week-title" style="color: #0c5460;">📚 الفصل الثاني</div>
-                <div class="week-dates">28 / 7 / 1447 هـ</div>
+                <div class="week-dates"><strong>28 / 7 / 1447 هـ</strong></div>
                 <div class="week-status" style="background: #17a2b8; color: white;">يوم الأحد</div>
             </div>
         </div>
@@ -993,26 +1000,61 @@
             </div>
         </div>
         
-        <!-- معلومات إضافية -->
-        <div class="info-section">
-            <div class="info-boxes">
-                <!-- الاختبارات النهائية -->
-                <div class="info-box final-exams">
-                    <h3>📝 الاختبارات النهائية</h3>
-                    <p>من 15 / 7 إلى 19 / 7<br>1447 هـ</p>
+
+
+        <!-- مربعات الأسماء -->
+        <div class="names-section" style="background: #f8f9fa; padding: 30px; border-top: 3px solid #dee2e6;">
+            <h3 style="text-align: center; color: #2c3e50; margin-bottom: 25px; font-size: 18px; font-weight: 700;">بيانات المسؤولين</h3>
+            <div class="names-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto;">
+                
+                <!-- مربع المعلم/ة -->
+                <div class="name-box" style="background: white; border: 2px solid #007bff; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <label style="display: block; color: #007bff; font-weight: 600; margin-bottom: 10px; font-size: 14px;">👨‍🏫 المعلم/ة</label>
+                    <input type="text" id="teacher-name" placeholder="ادخل اسم المعلم/ة" style="
+                        width: 100%; 
+                        padding: 12px; 
+                        border: 1px solid #dee2e6; 
+                        border-radius: 5px; 
+                        font-family: 'Cairo', 'Tahoma', sans-serif; 
+                        font-size: 14px; 
+                        text-align: center;
+                        background: #f8f9fa;
+                        transition: all 0.3s ease;
+                    " onchange="saveNamesData()" onfocus="this.style.background='white'; this.style.borderColor='#007bff'" onblur="this.style.background='#f8f9fa'; this.style.borderColor='#dee2e6'">
                 </div>
                 
-                <!-- إجازة منتصف العام -->
-                <div class="info-box mid-year-break">
-                    <h3>🏖️ إجازة منتصف العام</h3>
-                    <p>تبدأ يوم الأحد<br>20 / 7 / 1447 هـ</p>
+                <!-- مربع الوكيل/ة -->
+                <div class="name-box" style="background: white; border: 2px solid #28a745; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <label style="display: block; color: #28a745; font-weight: 600; margin-bottom: 10px; font-size: 14px;">👔 الوكيل/ة</label>
+                    <input type="text" id="deputy-name" placeholder="ادخل اسم الوكيل/ة" style="
+                        width: 100%; 
+                        padding: 12px; 
+                        border: 1px solid #dee2e6; 
+                        border-radius: 5px; 
+                        font-family: 'Cairo', 'Tahoma', sans-serif; 
+                        font-size: 14px; 
+                        text-align: center;
+                        background: #f8f9fa;
+                        transition: all 0.3s ease;
+                    " onchange="saveNamesData()" onfocus="this.style.background='white'; this.style.borderColor='#28a745'" onblur="this.style.background='#f8f9fa'; this.style.borderColor='#dee2e6'">
                 </div>
                 
-                <!-- بداية الفصل الثاني -->
-                <div class="info-box semester-start">
-                    <h3>📚 الفصل الثاني</h3>
-                    <p>يبدأ يوم الأحد<br>28 / 7 / 1447 هـ</p>
+                <!-- مربع المدير/ة -->
+                <div class="name-box" style="background: white; border: 2px solid #dc3545; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <label style="display: block; color: #dc3545; font-weight: 600; margin-bottom: 10px; font-size: 14px;">👑 المدير/ة</label>
+                    <input type="text" id="principal-name" placeholder="ادخل اسم المدير/ة" style="
+                        width: 100%; 
+                        padding: 12px; 
+                        border: 1px solid #dee2e6; 
+                        border-radius: 5px; 
+                        font-family: 'Cairo', 'Tahoma', sans-serif; 
+                        font-size: 14px; 
+                        text-align: center;
+                        background: #f8f9fa;
+                        transition: all 0.3s ease;
+                    " onchange="saveNamesData()" onfocus="this.style.background='white'; this.style.borderColor='#dc3545'" onblur="this.style.background='#f8f9fa'; this.style.borderColor='#dee2e6'">
                 </div>
+                
             </div>
         </div>
 
@@ -1037,7 +1079,7 @@
             <!-- عبارة الحقوق -->
             <div style="margin-bottom: 20px;">
                 <strong style="color: #ecf0f1; font-size: 16px; font-weight: 700;">جميع الحقوق محفوظة</strong><br>
-                <span style="color: #3498db; font-size: 18px; font-weight: 600; margin-top: 8px; display: inline-block;">قناة رسم للتصميم والخدمات التعليمية</span>
+                <span style="color: #28a745; font-size: 18px; font-weight: 600; margin-top: 8px; display: inline-block;">قناة رسم للتصميم والخدمات التعليمية</span>
             </div>
             
         </div>
@@ -1093,7 +1135,7 @@
                 days: [
                     {name: "الأحد", date: "22 / 3", subject: ""},
                     {name: "الاثنين", date: "23 / 3", subject: ""},
-                    {name: "الثلاثاء", date: "24 / 3", subject: ""},
+                    {name: "الثلاثاء", date: "24 / 3", subject: "اليوم الوطني 🇸🇦"},
                     {name: "الأربعاء", date: "25 / 3", subject: ""},
                     {name: "الخميس", date: "26 / 3", subject: ""}
                 ]
@@ -1103,7 +1145,7 @@
                 days: [
                     {name: "الأحد", date: "29 / 3", subject: ""},
                     {name: "الاثنين", date: "30 / 3", subject: ""},
-                    {name: "الثلاثاء", date: "1 / 4", subject: "اليوم الوطني 🇸🇦"},
+                    {name: "الثلاثاء", date: "1 / 4", subject: ""},
                     {name: "الأربعاء", date: "2 / 4", subject: ""},
                     {name: "الخميس", date: "3 / 4", subject: ""}
                 ]
@@ -1148,18 +1190,30 @@
                     {name: "الخميس", date: "1 / 5", subject: ""}
                 ]
             },
+            10: {
+                title: "الأسبوع العاشر",
+                days: [
+                    {name: "الأحد", date: "4 / 5", subject: ""},
+                    {name: "الاثنين", date: "5 / 5", subject: ""},
+                    {name: "الثلاثاء", date: "6 / 5", subject: ""},
+                    {name: "الأربعاء", date: "7 / 5", subject: ""},
+                    {name: "الخميس", date: "8 / 5", subject: ""}
+                ]
+            },
             autumn: {
                 title: "🍂 إجازة الخريف 🍂",
                 days: [
-                    {name: "الأحد", date: "4 / 5", subject: "إجازة رسمية 🍂"},
-                    {name: "الاثنين", date: "5 / 5", subject: "إجازة رسمية 🍂"},
-                    {name: "الثلاثاء", date: "6 / 5", subject: "إجازة رسمية 🍂"},
-                    {name: "الأربعاء", date: "7 / 5", subject: "إجازة رسمية 🍂"},
-                    {name: "الخميس", date: "8 / 5", subject: "إجازة رسمية 🍂"}
+                    {name: "الأحد", date: "30 / 5", subject: "إجازة رسمية 🍂"},
+                    {name: "الاثنين", date: "1 / 6", subject: "إجازة رسمية 🍂"},
+                    {name: "الثلاثاء", date: "2 / 6", subject: "إجازة رسمية 🍂"},
+                    {name: "الأربعاء", date: "3 / 6", subject: "إجازة رسمية 🍂"},
+                    {name: "الخميس", date: "4 / 6", subject: "إجازة رسمية 🍂"},
+                    {name: "الأحد", date: "7 / 6", subject: "إجازة رسمية 🍂"},
+                    {name: "الاثنين", date: "8 / 6", subject: "إجازة رسمية 🍂"}
                 ]
             },
-            10: {
-                title: "الأسبوع العاشر",
+            11: {
+                title: "الأسبوع الحادي عشر",
                 days: [
                     {name: "الأحد", date: "11 / 5", subject: ""},
                     {name: "الاثنين", date: "12 / 5", subject: ""},
@@ -1168,8 +1222,8 @@
                     {name: "الخميس", date: "15 / 5", subject: ""}
                 ]
             },
-            11: {
-                title: "الأسبوع الحادي عشر",
+            12: {
+                title: "الأسبوع الثاني عشر",
                 days: [
                     {name: "الأحد", date: "18 / 5", subject: ""},
                     {name: "الاثنين", date: "19 / 5", subject: ""},
@@ -1178,24 +1232,14 @@
                     {name: "الخميس", date: "22 / 5", subject: ""}
                 ]
             },
-            12: {
-                title: "الأسبوع الثاني عشر",
+            13: {
+                title: "الأسبوع الثالث عشر",
                 days: [
                     {name: "الأحد", date: "25 / 5", subject: ""},
                     {name: "الاثنين", date: "26 / 5", subject: ""},
                     {name: "الثلاثاء", date: "27 / 5", subject: ""},
                     {name: "الأربعاء", date: "28 / 5", subject: ""},
                     {name: "الخميس", date: "29 / 5", subject: ""}
-                ]
-            },
-            13: {
-                title: "الأسبوع الثالث عشر",
-                days: [
-                    {name: "الأحد", date: "2 / 6", subject: ""},
-                    {name: "الاثنين", date: "3 / 6", subject: ""},
-                    {name: "الثلاثاء", date: "4 / 6", subject: ""},
-                    {name: "الأربعاء", date: "5 / 6", subject: ""},
-                    {name: "الخميس", date: "6 / 6", subject: ""}
                 ]
             },
             14: {
@@ -1231,21 +1275,21 @@
             17: {
                 title: "الأسبوع السابع عشر",
                 days: [
-                    {name: "الأحد", date: "30 / 6", subject: ""},
-                    {name: "الاثنين", date: "1 / 7", subject: ""},
-                    {name: "الثلاثاء", date: "2 / 7", subject: ""},
-                    {name: "الأربعاء", date: "3 / 7", subject: ""},
-                    {name: "الخميس", date: "4 / 7", subject: ""}
+                    {name: "الأحد", date: "1 / 7", subject: ""},
+                    {name: "الاثنين", date: "2 / 7", subject: ""},
+                    {name: "الثلاثاء", date: "3 / 7", subject: ""},
+                    {name: "الأربعاء", date: "4 / 7", subject: ""},
+                    {name: "الخميس", date: "5 / 7", subject: ""}
                 ]
             },
             18: {
                 title: "الأسبوع الثامن عشر",
                 days: [
-                    {name: "الأحد", date: "7 / 7", subject: ""},
-                    {name: "الاثنين", date: "8 / 7", subject: ""},
-                    {name: "الثلاثاء", date: "9 / 7", subject: ""},
-                    {name: "الأربعاء", date: "10 / 7", subject: ""},
-                    {name: "الخميس", date: "11 / 7", subject: ""}
+                    {name: "الأحد", date: "8 / 7", subject: ""},
+                    {name: "الاثنين", date: "9 / 7", subject: ""},
+                    {name: "الثلاثاء", date: "10 / 7", subject: ""},
+                    {name: "الأربعاء", date: "11 / 7", subject: ""},
+                    {name: "الخميس", date: "12 / 7", subject: ""}
                 ]
             }
         };
@@ -1318,6 +1362,37 @@
             }
         }
         
+        // حفظ بيانات الأسماء
+        function saveNamesData() {
+            try {
+                const namesData = {
+                    teacher: document.getElementById('teacher-name').value,
+                    deputy: document.getElementById('deputy-name').value,
+                    principal: document.getElementById('principal-name').value
+                };
+                localStorage.setItem('schoolNamesData', JSON.stringify(namesData));
+                console.log('تم حفظ بيانات الأسماء بنجاح');
+            } catch (error) {
+                console.error('خطأ في حفظ بيانات الأسماء:', error);
+            }
+        }
+        
+        // تحميل بيانات الأسماء
+        function loadNamesData() {
+            try {
+                const savedNames = localStorage.getItem('schoolNamesData');
+                if (savedNames) {
+                    const namesData = JSON.parse(savedNames);
+                    document.getElementById('teacher-name').value = namesData.teacher || '';
+                    document.getElementById('deputy-name').value = namesData.deputy || '';
+                    document.getElementById('principal-name').value = namesData.principal || '';
+                    console.log('تم تحميل بيانات الأسماء بنجاح');
+                }
+            } catch (error) {
+                console.error('خطأ في تحميل بيانات الأسماء:', error);
+            }
+        }
+        
         // تحميل البيانات من المتصفح
         function loadDataFromLocalStorage() {
             try {
@@ -1348,6 +1423,7 @@
         function clearSavedData() {
             if (confirm('هل أنت متأكد من حذف جميع البيانات المحفوظة؟')) {
                 localStorage.removeItem('schoolScheduleData');
+                localStorage.removeItem('schoolNamesData');
                 location.reload(); // إعادة تحميل الصفحة
             }
         }
@@ -1585,10 +1661,10 @@
             // إضافة الأحداث الخاصة
             content += `
                 <div class="print-special-week mid-year-break">
-                    🏖️ إجازة منتصف العام - تبدأ يوم الأحد 20 / 5 / 1447 هـ
+                    🏖️ إجازة منتصف العام - تبدأ يوم الأحد <strong>20 / 7 / 1447 هـ</strong>
                 </div>
                 <div class="print-special-week second-semester">
-                    📚 بداية الفصل الثاني - يوم الأحد 29 / 5 / 1447 هـ
+                    📚 بداية الفصل الثاني - يوم الأحد <strong>28 / 7 / 1447 هـ</strong>
                 </div>
             `;
             
@@ -1619,7 +1695,7 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
             `;
             
-            let weekNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'autumn', 10, 11, 12, 13, 14, 15, 16, 17, 18];
+            let weekNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 'autumn', 14, 15, 16, 17, 18];
             
             weekNumbers.forEach(weekNum => {
                 const weekData = weeksData[weekNum];
@@ -1681,7 +1757,7 @@
                 <html lang="ar" dir="rtl">
                 <head>
                     <meta charset="UTF-8">
-                    <title>التقويم المدرسي التفصيلي - طباعة</title>
+                    <title>الجدول المدرسي التفصيلي - طباعة</title>
                     <style>
                         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
                         
@@ -1847,6 +1923,7 @@
                             flex: 1;
                             color: #495057;
                             font-size: 5px;
+                            font-weight: 700;
                             text-align: center;
                             border-bottom: 0.3px dotted #ccc;
                             min-height: 3mm;
@@ -1921,7 +1998,7 @@
             let content = `
                 <div class="header">
                     <img src="https://salogos.org/wp-content/uploads/2021/11/UntiTtled-1-1300x988.png" alt="شعار وزارة التعليم" class="ministry-logo">
-                    <h1>التقويم المدرسي التفصيلي للفصل الدراسي الأول للعام الدراسي 1447 هـ</h1>
+                    <h1>التقويم الدراسي التفصيلي للفصل الدراسي الأول لعام 1447 هـ</h1>
                 </div>
                 
                 <div class="weeks-container">
@@ -1950,64 +2027,195 @@
                     content += `</div><div class="weeks-container">`;
                 }
                 
-                content += `
-                    <div class="${weekClass}">
-                        <div class="week-header-detailed">
-                            ${weekData.title}
-                        </div>
-                        <div class="days-detailed">
-                `;
-                
-                weekData.days.forEach(day => {
-                    let dayClass = 'day-detailed';
+                // إذا كان الأسبوع الثامن عشر، أضف الأحداث الخاصة بجانبه
+                if (weekNum === 18) {
+                    content += `
+                        <div class="${weekClass}">
+                            <div class="week-header-detailed">
+                                ${weekData.title}
+                            </div>
+                            <div class="days-detailed">
+                    `;
                     
-                    // تحديد نوع اليوم للتلوين
-                    if (day.subject.includes('اليوم الوطني')) {
-                        dayClass += ' national-day';
-                    } else if (day.subject.includes('إجازة إضافية')) {
-                        dayClass += ' holiday-day';
-                    } else if (day.subject.includes('إجازة رسمية')) {
-                        dayClass += ' autumn-day';
-                    } else if (day.subject.includes('بداية العام الدراسي')) {
-                        dayClass += ' school-start-day';
-                    }
-                    
-                    const subjectText = day.subject || '___________________';
+                    weekData.days.forEach(day => {
+                        let dayClass = 'day-detailed';
+                        const subjectText = day.subject || '___________________';
+                        
+                        content += `
+                            <div class="${dayClass}">
+                                <div class="day-name-detailed">${day.name}</div>
+                                <div class="day-date-detailed">${day.date}</div>
+                                <div class="day-subject-detailed">${subjectText}</div>
+                            </div>
+                        `;
+                    });
                     
                     content += `
-                        <div class="${dayClass}">
-                            <div class="day-name-detailed">${day.name}</div>
-                            <div class="day-date-detailed">${day.date}</div>
-                            <div class="day-subject-detailed">${subjectText}</div>
+                            </div>
+                        </div>
+                        
+                        <!-- الأحداث الخاصة -->
+                        <div style="display: flex; flex-direction: column; gap: 0.3mm;">
+                            <!-- الاختبارات النهائية -->
+                            <div class="week-detailed final-exams" style="min-height: 6mm;">
+                                <div class="week-header-detailed" style="background: #6c757d !important; color: white !important; font-size: 5px; padding: 0.3mm;">
+                                    📝 الاختبارات النهائية
+                                </div>
+                                <div style="padding: 0.3mm; text-align: center; font-size: 4px; color: #495057;">
+                                    <strong>15 / 7 - 19 / 7</strong>
+                                </div>
+                            </div>
+                            
+                            <!-- إجازة منتصف العام -->
+                            <div class="week-detailed mid-year-break" style="min-height: 6mm;">
+                                <div class="week-header-detailed" style="background: #28a745 !important; color: white !important; font-size: 5px; padding: 0.3mm;">
+                                    🏖️ إجازة منتصف العام
+                                </div>
+                                <div style="padding: 0.3mm; text-align: center; font-size: 4px; color: #155724;">
+                                    <strong>20 / 7 / 1447 هـ</strong>
+                                </div>
+                            </div>
+                            
+                            <!-- بداية الفصل الثاني -->
+                            <div class="week-detailed second-semester" style="min-height: 6mm;">
+                                <div class="week-header-detailed" style="background: #17a2b8 !important; color: white !important; font-size: 5px; padding: 0.3mm;">
+                                    📚 الفصل الثاني
+                                </div>
+                                <div style="padding: 0.3mm; text-align: center; font-size: 4px; color: #0c5460;">
+                                    <strong>28 / 7 / 1447 هـ</strong>
+                                </div>
+                            </div>
                         </div>
                     `;
-                });
-                
-                content += `
+                } else {
+                    content += `
+                        <div class="${weekClass}">
+                            <div class="week-header-detailed">
+                                ${weekData.title}
+                            </div>
+                            <div class="days-detailed">
+                    `;
+                    
+                    weekData.days.forEach(day => {
+                        let dayClass = 'day-detailed';
+                        
+                        // تحديد نوع اليوم للتلوين
+                        if (day.subject.includes('اليوم الوطني')) {
+                            dayClass += ' national-day';
+                        } else if (day.subject.includes('إجازة إضافية')) {
+                            dayClass += ' holiday-day';
+                        } else if (day.subject.includes('إجازة رسمية')) {
+                            dayClass += ' autumn-day';
+                        } else if (day.subject.includes('بداية العام الدراسي')) {
+                            dayClass += ' school-start-day';
+                        }
+                        
+                        const subjectText = day.subject || '___________________';
+                        
+                        content += `
+                            <div class="${dayClass}">
+                                <div class="day-name-detailed">${day.name}</div>
+                                <div class="day-date-detailed">${day.date}</div>
+                                <div class="day-subject-detailed">${subjectText}</div>
+                            </div>
+                        `;
+                    });
+                    
+                    content += `
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                }
             });
             
             content += `
                 </div>
                 
-                <div class="special-events">
-                    <div class="special-event final-exams">
-                        📝 الاختبارات النهائية للفصل الأول - من 15 / 7 إلى 19 / 7 / 1447 هـ
+                <!-- مربعات الأسماء تحت الأسابيع -->
+                <div style="display: flex; justify-content: center; gap: 2mm; margin: 3mm 0; width: 100%;">
+                    <!-- مربع المعلم/ة -->
+                    <div class="week-detailed" style="background: white !important; border: 0.5px solid #6c757d !important; border-radius: 1mm; min-height: 8mm; flex: 1; max-width: 60mm; -webkit-print-color-adjust: exact !important; color-adjust: exact !important; print-color-adjust: exact !important;">
+                        <div class="week-header-detailed" style="background: #0ABAB5 !important; color: white !important; font-size: 6px; padding: 0.5mm;">
+                            👨‍🏫 المعلم/ة
+                        </div>
+                        <div style="padding: 1mm; text-align: center; font-size: 6px; color: #495057 !important; font-weight: 700; display: flex; align-items: center; justify-content: center; min-height: 5mm;">
+                            ${getTeacherName()}
+                        </div>
                     </div>
                     
-                    <div class="special-event mid-year-break">
-                        🏖️ إجازة منتصف العام الدراسي - تبدأ يوم الأحد 20 / 7 / 1447 هـ
+                    <!-- مربع الوكيل/ة -->
+                    <div class="week-detailed" style="background: white !important; border: 0.5px solid #6c757d !important; border-radius: 1mm; min-height: 8mm; flex: 1; max-width: 60mm; -webkit-print-color-adjust: exact !important; color-adjust: exact !important; print-color-adjust: exact !important;">
+                        <div class="week-header-detailed" style="background: #0ABAB5 !important; color: white !important; font-size: 6px; padding: 0.5mm;">
+                            👔 الوكيل/ة
+                        </div>
+                        <div style="padding: 1mm; text-align: center; font-size: 6px; color: #495057 !important; font-weight: 700; display: flex; align-items: center; justify-content: center; min-height: 5mm;">
+                            ${getDeputyName()}
+                        </div>
                     </div>
                     
-                    <div class="special-event second-semester">
-                        📚 بداية الفصل الدراسي الثاني - يوم الأحد 28 / 7 / 1447 هـ
+                    <!-- مربع المدير/ة -->
+                    <div class="week-detailed" style="background: white !important; border: 0.5px solid #6c757d !important; border-radius: 1mm; min-height: 8mm; flex: 1; max-width: 60mm; -webkit-print-color-adjust: exact !important; color-adjust: exact !important; print-color-adjust: exact !important;">
+                        <div class="week-header-detailed" style="background: #0ABAB5 !important; color: white !important; font-size: 6px; padding: 0.5mm;">
+                            👑 المدير/ة
+                        </div>
+                        <div style="padding: 1mm; text-align: center; font-size: 6px; color: #495057 !important; font-weight: 700; display: flex; align-items: center; justify-content: center; min-height: 5mm;">
+                            ${getPrincipalName()}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- معلومات التواصل للطباعة - نفس تصميم الموقع -->
+                <div class="print-footer" style="
+                    margin-top: 1mm; 
+                    padding: 8mm; 
+                    background: linear-gradient(135deg, #2c3e50, #34495e) !important; 
+                    color: white !important; 
+                    border-radius: 2mm;
+                    -webkit-print-color-adjust: exact !important;
+                    color-adjust: exact !important;
+                    print-color-adjust: exact !important;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 5mm;
+                ">
+                    <!-- الشعار في اليمين -->
+                    <div>
+                        <img src="https://h.top4top.io/p_3453yqc3h0.png" alt="شعار قناة رسم" style="
+                            max-width: 20mm; 
+                            max-height: 20mm; 
+                            width: auto; 
+                            height: auto; 
+                            object-fit: contain; 
+                            display: block;
+                        ">
+                    </div>
+                    
+                    <!-- عبارة الحقوق بجانب الشعار -->
+                    <div>
+                        <div style="color: #ecf0f1 !important; font-size: 10px; font-weight: 700; margin-bottom: 2mm;">جميع الحقوق محفوظة</div>
+                        <div style="color: #28a745 !important; font-size: 12px; font-weight: 600;">قناة رسم للتصميم والخدمات التعليمية</div>
                     </div>
                 </div>
             `;
             
             return content;
+        }
+        
+        // وظائف الحصول على الأسماء للطباعة
+        function getTeacherName() {
+            const name = document.getElementById('teacher-name').value;
+            return name || '___________________';
+        }
+        
+        function getDeputyName() {
+            const name = document.getElementById('deputy-name').value;
+            return name || '___________________';
+        }
+        
+        function getPrincipalName() {
+            const name = document.getElementById('principal-name').value;
+            return name || '___________________';
         }
         
         function showMessage(text, color) {
@@ -2047,6 +2255,7 @@
         
         // تحميل البيانات المحفوظة عند بدء الصفحة
         loadDataFromLocalStorage();
+        loadNamesData();
         
         // إنشاء عرض الطباعة فوراً
         generatePrintView();
@@ -2054,14 +2263,17 @@
         // تحميل إضافي للتأكد
         document.addEventListener('DOMContentLoaded', function() {
             loadDataFromLocalStorage();
+            loadNamesData();
             generatePrintView();
         });
         
         // تحميل احتياطي
         window.addEventListener('load', function() {
             loadDataFromLocalStorage();
+            loadNamesData();
             generatePrintView();
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96b256fb74f558fa',t:'MTc1NDUyMzIxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96b37576e1fde8e2',t:'MTc1NDUzNDk0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
