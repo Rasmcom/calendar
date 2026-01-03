@@ -16,18 +16,71 @@
             min-height: 100vh;
         }
 
+        /* --- تنسيق أزرار التحكم (الجديد) --- */
         .controls {
             position: fixed; top: 20px; left: 20px; z-index: 1000;
+            display: flex; gap: 10px;
+            align-items: flex-start;
+        }
+
+        .btns-container {
             display: flex; gap: 10px;
         }
         
         .control-btn {
-            background: #28a745; color: white; border: none; padding: 12px 20px;
+            background: #28a745; color: white; border: none; padding: 10px 20px;
             border-radius: 25px; font-family: 'Cairo'; font-weight: 700; cursor: pointer;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
+            transition: all 0.3s;
+            white-space: nowrap;
         }
         .control-btn:hover { transform: translateY(-2px); }
+
+        /* زر القائمة (يظهر للجوال فقط) */
+        .toggle-menu-btn {
+            display: none;
+            background: #2c3e50; color: white; border: none;
+            width: 45px; height: 45px; border-radius: 50%;
+            font-size: 20px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+        }
+
+        /* --- تحسينات الجوال للأزرار --- */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column; /* ترتيب عمودي */
+            }
+            
+            .toggle-menu-btn {
+                display: flex; justify-content: center; align-items: center;
+            }
+
+            .btns-container {
+                display: none; /* مخفي افتراضياً */
+                flex-direction: column; /* الأزرار فوق بعض */
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .btns-container.active {
+                display: flex; /* يظهر عند النقر */
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .control-btn {
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+                padding: 8px 15px;
+            }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* ----------------------------------- */
 
         .container {
             max-width: 1400px; margin: 0 auto; background: white;
@@ -117,10 +170,14 @@
 </head>
 <body>
 
+<!-- تعديل هيكل الأزرار للجوال -->
 <div class="controls">
-    <button class="control-btn" style="background: #dc3545;" onclick="printSchedule()">📥 تحميل PDF</button>
-    <button class="control-btn" style="background: #ffc107; color: #333;" onclick="expandAll()">📋 عرض التفاصيل</button>
-    <button class="control-btn" style="background: #6c757d;" onclick="clearData()">🗑️ مسح البيانات</button>
+    <button class="toggle-menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="btns-container" id="menuBtns">
+        <button class="control-btn" style="background: #dc3545;" onclick="printSchedule()">📥 PDF</button>
+        <button class="control-btn" style="background: #ffc107; color: #333;" onclick="expandAll()">📋 التفاصيل</button>
+        <button class="control-btn" style="background: #6c757d;" onclick="clearData()">🗑️ مسح</button>
+    </div>
 </div>
 
 <div class="overlay" onclick="closeDetails()"></div>
@@ -174,12 +231,22 @@
     let currentRegion = 'all';
     let scheduleData = {};
 
-    // تحديث المفتاح
-    const STORAGE_KEY = "school_schedule_final_v4_";
+    const STORAGE_KEY = "school_schedule_final_v5_";
+
+    // دالة فتح/إغلاق القائمة في الجوال
+    function toggleMenu() {
+        const menu = document.getElementById('menuBtns');
+        if (menu.style.display === 'flex') {
+            menu.style.display = 'none';
+            menu.classList.remove('active');
+        } else {
+            menu.style.display = 'flex';
+            menu.classList.add('active');
+        }
+    }
 
     const rawData = {
         'all': [
-            // التعديل: الأسبوع الأول (st) أصبح "عودة الدراسة"
             {t:"الأسبوع الأول", s:"07 / 29", e:"08 / 03", st:"عودة الدراسة", d:["07/29","07/30","08/01","08/02","08/03"]},
             {t:"الأسبوع الثاني", s:"08 / 06", e:"08 / 10", st:"دراسة", d:["08/06","08/07","08/08","08/09","08/10"]},
             {t:"الأسبوع الثالث", s:"08 / 13", e:"08 / 17", st:"دراسة", d:["08/13","08/14","08/15","08/16","08/17"]},
@@ -203,14 +270,13 @@
             {t:"الأسبوع التاسع عشر", s:"01 / 06", e:"01 / 10", st:"نهاية العام الدراسي 🏁", d:["01/06","01/07","01/08","01/09","01/10"]}
         ],
         'west': [
-            // التعديل: الأسبوع الأول (st) أصبح "عودة الدراسة"
             {t:"الأسبوع الأول", s:"07 / 29", e:"08 / 03", st:"عودة الدراسة", d:["07/29","07/30","08/01","08/02","08/03"]},
             {t:"الأسبوع الثاني", s:"08 / 06", e:"08 / 10", st:"دراسة", d:["08/06","08/07","08/08","08/09","08/10"]},
             {t:"الأسبوع الثالث", s:"08 / 13", e:"08 / 17", st:"دراسة", d:["08/13","08/14","08/15","08/16","08/17"]},
             {t:"الأسبوع الرابع", s:"08 / 20", e:"08 / 24", st:"دراسة", d:["08/20","08/21","08/22","08/23","08/24"]},
             {t:"الأسبوع الخامس", s:"08 / 27", e:"09 / 02", st:"دراسة", d:["08/27","08/28","08/29","09/01","09/02"]},
             {t:"الأسبوع السادس", s:"09 / 05", e:"09 / 09", st:"إجازة يوم التأسيس 🇸🇦", d:["09/05 (إجازة)","09/06","09/07","09/08","09/09"]},
-            {t:"الأسبوع السابع", s:"09 / 12", e:"09 / 16", st:"دراسة", d:["09/12","09/13","09/14","09/15","09/16 (بداية إجازة عيد الفطر)"]},
+            {t:"الأسبوع السابع", s:"09 / 12", e:"09 / 16", st:"دراسة", d:["09/12","09/13","09/14","09/15","09/16 (بداية إجازة عيد الفطر بنهاية الدوام)"]},
             {t:"إجازة عيد الفطر", s:"09 / 16", e:"10 / 09", st:"إجازة رسمية", d:["إجازة","إجازة","إجازة","إجازة","إجازة"]},
             {t:"الأسبوع الثامن", s:"10 / 10", e:"10 / 14", st:"عودة الدراسة 🎓", d:["10/10","10/11","10/12","10/13","10/14"]},
             {t:"الأسبوع التاسع", s:"10 / 17", e:"10 / 21", st:"دراسة", d:["10/17","10/18","10/19","10/20","10/21"]},
@@ -218,7 +284,7 @@
             {t:"الأسبوع الحادي عشر", s:"11 / 02", e:"11 / 06", st:"دراسة", d:["11/02","11/03","11/04","11/05","11/06"]},
             {t:"الأسبوع الثاني عشر", s:"11 / 09", e:"11 / 13", st:"دراسة", d:["11/09","11/10","11/11","11/12","11/13"]},
             {t:"الأسبوع الثالث عشر", s:"11 / 16", e:"11 / 20", st:"دراسة", d:["11/16","11/17","11/18","11/19","11/20"]},
-            {t:"الأسبوع الرابع عشر", s:"11 / 23", e:"11 / 27", st:"دراسة", d:["11/23","11/24","11/25","11/26","11/27 (بداية إجازة عيد الأضحى)"]},
+            {t:"الأسبوع الرابع عشر", s:"11 / 23", e:"11 / 27", st:"دراسة", d:["11/23","11/24","11/25","11/26","11/27 (بداية إجازة عيد الأضحى بنهاية الدوام)"]},
             {t:"إجازة عيد الأضحى", s:"11 / 27", e:"12 / 15", st:"إجازة رسمية", d:["إجازة","إجازة","إجازة","إجازة","إجازة"]},
             {t:"الأسبوع الخامس عشر", s:"12 / 14", e:"12 / 18", st:"عودة الدراسة", d:["12/14 (إجازة)","12/15 (إجازة)","12/16","12/17","12/18"]},
             {t:"الأسبوع السادس عشر", s:"12 / 21", e:"12 / 25", st:"دراسة", d:["12/21","12/22","12/23","12/24","12/25"]},
@@ -243,7 +309,6 @@
                 for(let j=0; j<5; j++) {
                     let rawDate = wk.d[j] || "...";
                     let note = "";
-                    
                     if(rawDate.includes("(")) {
                         const splitIdx = rawDate.indexOf("(");
                         const datePart = rawDate.substring(0, splitIdx).trim();
@@ -268,18 +333,9 @@
                     });
                 }
                 
-                // 1. الأسبوع الأول، اليوم الأول (الأحد)
-                if(index === 0) {
-                    daysArr[0].subject = "بداية الفصل الدراسي الثاني";
-                }
-                
-                // 2. يوم التأسيس
+                if(index === 0) daysArr[0].subject = "بداية الفصل الدراسي الثاني";
                 if(wk.st.includes('تأسيس')) daysArr[0].subject = wk.st;
-
-                // 3. الأسبوع الأخير (19): الخميس
-                if(index === regionData.length - 1) {
-                    daysArr[4].subject = "تبدأ إجازة نهاية العام بنهاية دوام هذا اليوم";
-                }
+                if(index === regionData.length - 1) daysArr[4].subject = "تبدأ إجازة نهاية العام بنهاية دوام هذا اليوم";
 
                 scheduleData[index+1] = {
                     title: wk.t,
@@ -352,13 +408,10 @@
             let rowClass = 'day-row';
             let extraStyle = '';
 
-            // تلوين الإجازات
             if(d.date.includes('إجازة') || d.subject.includes('إجازة')) {
                 rowClass += ' holiday-day';
                 extraStyle = 'background: #f8d7da;';
             }
-            
-            // تلوين بداية الفصل (أخضر)
             if(d.subject.includes('بداية الفصل')) {
                 extraStyle = 'background: #d4edda; border-right: 4px solid #28a745;';
             }
@@ -442,27 +495,9 @@
             text-align: right;
             font-size: 7px;
         }
-        
-        .day-name { 
-            font-weight: 700; 
-            color: #000; 
-            margin-left: 4px; 
-            flex-shrink: 0;
-        }
-        
-        .day-date { 
-            color: #555; 
-            margin-left: 8px; 
-            flex-shrink: 0;
-            font-weight: 600;
-        }
-        
-        .day-subject { 
-            flex: 1; 
-            text-align: right; 
-            color: #2c3e50; 
-            font-weight: bold;
-        }
+        .day-name { font-weight: 700; color: #000; margin-left: 4px; flex-shrink: 0; }
+        .day-date { color: #555; margin-left: 8px; flex-shrink: 0; font-weight: 600; }
+        .day-subject { flex: 1; text-align: right; color: #2c3e50; font-weight: bold; }
 
         .contact-info { background: #2c3e50; color: white; padding: 8px; text-align: center; border-radius: 4px; font-size: 8px; margin-top: 8px; }
         .contact-info img { max-width: 30px; max-height: 30px; margin-bottom: 4px; }
@@ -509,7 +544,6 @@
             wk.days.forEach(d => {
                 let rowStyle = '';
                 if(d.subject.includes('إجازة') || d.date.includes('إجازة')) rowStyle = 'background: #f8d7da;';
-                // تلوين بداية الفصل في الطباعة
                 if(d.subject.includes('بداية الفصل')) rowStyle = 'background: #d4edda;';
                 
                 h += `<div class="day-row" style="${rowStyle}">`;
